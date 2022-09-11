@@ -1,5 +1,4 @@
 
-
 function reverseStr(str) {
     var listOfChars = str.split('');
     var reverseListOfChars = listOfChars.reverse();
@@ -135,6 +134,9 @@ function clickHandler(e) {
     
     
     var bdayStr = dateInputRef.value;
+    if(bdayStr.length == 0){
+        resultRef.innerText = 'Kindly enter date value to see the result 👀';
+    }
     
     if (bdayStr !== '') {
         var listOfDate = bdayStr.split('-');
@@ -153,7 +155,7 @@ function clickHandler(e) {
         else {
             var [ctr, nextDate] = getNextPalindromeDate(date);
 
-            resultRef.innerText = `The next palindrome date is ${nextDate.day}-${nextDate.month}-${nextDate.year}, you missed it by ${ctr} days! 😔`;
+            resultRef.innerText = `OOps ! It's not palindromic .The next palindrome date is ${nextDate.day}-${nextDate.month}-${nextDate.year}, you missed it by ${ctr} days! 😔`;
         }
     }
 }
